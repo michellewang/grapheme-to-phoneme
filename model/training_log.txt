@@ -1,0 +1,134 @@
+Hyperparameters: ('blstm', 'lstm', 256, 1, 'adam', 64)
+	Accuracy: 0.5755860629415542
+	Average BLEU score: 0.703125298602677
+	Total training and testing time: 0:30:42.371073
+
+Hyperparameters: ('blstm', 'lstm', 256, 1, 'adam', 128)
+	Accuracy: 0.579359344894027
+	Average BLEU score: 0.7059361069221536
+	Total training and testing time: 0:25:25.724009
+
+Hyperparameters: ('blstm', 'lstm', 256, 1, 'adam', 256)
+	Accuracy: 0.55832530507386
+	Average BLEU score: 0.6859034846012922
+	Total training and testing time: 0:21:41.798684
+
+Hyperparameters: ('blstm', 'lstm', 256, 1, 'rmsprop', 64)
+	Accuracy: 0.5781952472703917
+	Average BLEU score: 0.7041967243090145
+	Total training and testing time: 0:29:21.520086
+
+Hyperparameters: ('blstm', 'lstm', 256, 1, 'rmsprop', 128)
+	Accuracy: 0.31972543352601157
+	Average BLEU score: 0.48855359359790845
+	Total training and testing time: 0:16:29.072843
+
+Hyperparameters: ('blstm', 'lstm', 256, 1, 'rmsprop', 256)
+	Accuracy: 0.578757225433526
+	Average BLEU score: 0.7022687132616054
+	Total training and testing time: 0:22:09.241207
+
+Hyperparameters: ('blstm', 'lstm', 256, 2, 'adam', 64)
+	Accuracy: 0.5987074502247912
+	Average BLEU score: 0.717449938930868
+	Total training and testing time: 0:37:29.137212
+
+Hyperparameters: ('blstm', 'lstm', 512, 1, 'adam', 64)
+	Accuracy: 0.581607257546564
+	Average BLEU score: 0.7079042803822654
+	Total training and testing time: 0:32:18.895772
+
+Hyperparameters: ('blstm', 'lstm', 512, 1, 'adam', 128)
+	Accuracy: 0.599630700064226
+	Average BLEU score: 0.7225150008077312
+	Total training and testing time: 0:29:53.134237
+
+Hyperparameters: ('blstm', 'lstm', 512, 1, 'adam', 256)
+	Accuracy: 0.5858220937700707
+	Average BLEU score: 0.7119154339708718
+	Total training and testing time: 0:26:51.062748
+
+Hyperparameters: ('blstm', 'lstm', 512, 3, 'adam', 64)
+	Accuracy: 0.599349710982659
+	Average BLEU score: 0.720568526507355
+	Total training and testing time: 0:43:17.021572
+
+Hyperparameters: ('blstm', 'lstm', 512, 3, 'adam', 128)
+	Accuracy: 0.5995504174694927
+	Average BLEU score: 0.7204536263522018
+	Total training and testing time: 0:34:22.481552
+
+Hyperparameters: ('blstm', 'lstm', 512, 3, 'adam', 256)
+	Accuracy: 0.598145472061657
+	Average BLEU score: 0.7202759381095571
+	Total training and testing time: 0:31:49.144216
+
+Hyperparameters: ('blstm', 'lstm', 512, 2, 'adam', 64)
+	Accuracy: 0.6036849710982659
+	Average BLEU score: 0.7248616470148539
+	Total training and testing time: 0:40:23.233456
+
+Hyperparameters: ('blstm', 'lstm', 512, 2, 'adam', 128)
+	Accuracy: 0.5966201027617213
+	Average BLEU score: 0.7189727608303834
+	Total training and testing time: 0:32:44.357861
+
+Hyperparameters: ('blstm', 'lstm', 512, 2, 'adam', 256)
+	Accuracy: 0.6028018625561978
+	Average BLEU score: 0.7218381152002332
+	Total training and testing time: 0:30:54.264798
+
+Hyperparameters: ('blstm', 'lstm', 256, 3, 'adam', 64)
+	Accuracy: 0.5929672447013488
+	Average BLEU score: 0.7142173953768662
+	Total training and testing time: 0:44:22.957537
+
+Hyperparameters: ('blstm', 'lstm', 256, 3, 'adam', 128)
+	Accuracy: 0.5897157996146436
+	Average BLEU score: 0.7112426292904143
+	Total training and testing time: 0:32:20.653820
+
+Hyperparameters: ('blstm', 'lstm', 256, 3, 'adam', 256)
+	Accuracy: 0.5709296724470135
+	Average BLEU score: 0.6952783786788207
+	Total training and testing time: 0:27:03.287081
+
+Hyperparameters: ('blstm', 'lstm', 256, 2, 'adam', 128)
+	Accuracy: 0.5912813102119461
+	Average BLEU score: 0.7120168534100145
+	Total training and testing time: 0:31:25.919659
+
+Hyperparameters: ('blstm', 'lstm', 256, 2, 'adam', 256)
+	Accuracy: 0.5718127809890816
+	Average BLEU score: 0.697766111407566
+	Total training and testing time: 0:25:24.009730
+
+Hyperparameters: ('blstm', 'lstm', 512, 1, 'adam', 32)
+	Accuracy: 0.6018384714193963
+	Average BLEU score: 0.7242628075788669
+	Total training and testing time: 0:51:14.674554
+
+Hyperparameters: ('blstm', 'lstm', 512, 2, 'adam', 32)
+	Accuracy: 0.6195407835581246
+	Average BLEU score: 0.7358755330145365
+	Total training and testing time: 1:05:12.687761
+
+Hyperparameters: ('blstm', 'lstm', 512, 3, 'adam', 32)
+	Accuracy: 0.6181759794476558
+	Average BLEU score: 0.7353353646547307
+	Total training and testing time: 1:11:44.059884
+
+Hyperparameters: ('blstm', 'lstm', 256, 1, 'adam', 32)
+	Accuracy: 0.5983461785484907
+	Average BLEU score: 0.7201576874505488
+	Total training and testing time: 0:50:25.569999
+
+Hyperparameters: ('blstm', 'lstm', 256, 2, 'adam', 32)
+	Accuracy: 0.5865446371226718
+	Average BLEU score: 0.7122090929742386
+	Total training and testing time: 0:47:02.549746
+
+Hyperparameters: ('blstm', 'lstm', 256, 3, 'adam', 32)
+	Accuracy: 0.6063342967244701
+	Average BLEU score: 0.7250990263625238
+	Total training and testing time: 1:01:40.757798
