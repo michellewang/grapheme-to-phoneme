@@ -3,3 +3,6 @@
 
 # ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints
+
+# ignore old files
+old
