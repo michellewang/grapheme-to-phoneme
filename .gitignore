@@ -5,7 +5,4 @@
 .ipynb_checkpoints
 
 # ignore old files
-old
-
-# ignore saved model checkpoints
-models
+old/
