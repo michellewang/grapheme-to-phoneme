@@ -1,0 +1,561 @@
+[2019-11-08 05:29:46,738 INFO]  * src vocab size = 28
+[2019-11-08 05:29:46,739 INFO]  * tgt vocab size = 73
+[2019-11-08 05:29:46,739 INFO] Building model...
+[2019-11-08 05:29:49,336 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(28, 500, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(500, 250, num_layers=2, dropout=0.2, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(73, 500, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.2, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.2, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(1000, 500)
+        (1): LSTMCell(500, 500)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=500, out_features=500, bias=False)
+      (linear_out): Linear(in_features=1000, out_features=500, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=500, out_features=73, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2019-11-08 05:29:49,337 INFO] encoder: 3022000
+[2019-11-08 05:29:49,338 INFO] decoder: 5831073
+[2019-11-08 05:29:49,338 INFO] * number of parameters: 8853073
+[2019-11-08 05:29:49,342 INFO] Starting training on GPU: [0]
+[2019-11-08 05:29:49,342 INFO] Start training loop and validate every 2549 steps...
+[2019-11-08 05:29:49,343 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:29:51,148 INFO] number of examples: 81551
+[2019-11-08 05:31:54,815 INFO] Step 2549/191175; acc:  82.81; ppl:  1.87; xent: 0.62; lr: 0.00100; 4813/4757 tok/s;    125 sec
+[2019-11-08 05:31:54,816 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:31:55,263 INFO] number of examples: 11651
+[2019-11-08 05:32:02,324 INFO] Validation perplexity: 1.3913
+[2019-11-08 05:32:02,324 INFO] Validation accuracy: 90.1449
+[2019-11-08 05:32:02,324 INFO] Model is improving acc: -inf --> 90.1449.
+[2019-11-08 05:32:02,326 INFO] Saving checkpoint models/model2/model2_step_2549.pt
+[2019-11-08 05:32:02,604 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:32:03,395 INFO] number of examples: 81551
+[2019-11-08 05:34:06,974 INFO] Step 5098/191175; acc:  90.62; ppl:  1.36; xent: 0.31; lr: 0.00100; 4570/4516 tok/s;    258 sec
+[2019-11-08 05:34:06,975 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:34:07,021 INFO] number of examples: 11651
+[2019-11-08 05:34:14,123 INFO] Validation perplexity: 1.32725
+[2019-11-08 05:34:14,123 INFO] Validation accuracy: 91.5853
+[2019-11-08 05:34:14,124 INFO] Model is improving acc: 90.1449 --> 91.5853.
+[2019-11-08 05:34:14,125 INFO] Saving checkpoint models/model2/model2_step_5098.pt
+[2019-11-08 05:34:14,470 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:34:15,128 INFO] number of examples: 81551
+[2019-11-08 05:36:18,726 INFO] Step 7647/191175; acc:  91.80; ppl:  1.30; xent: 0.27; lr: 0.00100; 4584/4530 tok/s;    389 sec
+[2019-11-08 05:36:18,726 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:36:19,088 INFO] number of examples: 11651
+[2019-11-08 05:36:26,183 INFO] Validation perplexity: 1.30578
+[2019-11-08 05:36:26,184 INFO] Validation accuracy: 92.0886
+[2019-11-08 05:36:26,184 INFO] Model is improving acc: 91.5853 --> 92.0886.
+[2019-11-08 05:36:26,185 INFO] Saving checkpoint models/model2/model2_step_7647.pt
+[2019-11-08 05:36:26,520 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:36:28,145 INFO] number of examples: 81551
+[2019-11-08 05:38:32,101 INFO] Step 10196/191175; acc:  92.65; ppl:  1.27; xent: 0.24; lr: 0.00100; 4528/4475 tok/s;    523 sec
+[2019-11-08 05:38:32,101 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:38:32,146 INFO] number of examples: 11651
+[2019-11-08 05:38:39,323 INFO] Validation perplexity: 1.29187
+[2019-11-08 05:38:39,324 INFO] Validation accuracy: 92.3885
+[2019-11-08 05:38:39,324 INFO] Model is improving acc: 92.0886 --> 92.3885.
+[2019-11-08 05:38:39,326 INFO] Saving checkpoint models/model2/model2_step_10196.pt
+[2019-11-08 05:38:39,621 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:38:40,363 INFO] number of examples: 81551
+[2019-11-08 05:40:44,701 INFO] Step 12745/191175; acc:  93.39; ppl:  1.23; xent: 0.21; lr: 0.00100; 4554/4501 tok/s;    655 sec
+[2019-11-08 05:40:44,702 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:40:44,753 INFO] number of examples: 11651
+[2019-11-08 05:40:51,856 INFO] Validation perplexity: 1.29148
+[2019-11-08 05:40:51,856 INFO] Validation accuracy: 92.5884
+[2019-11-08 05:40:51,857 INFO] Model is improving acc: 92.3885 --> 92.5884.
+[2019-11-08 05:40:51,858 INFO] Saving checkpoint models/model2/model2_step_12745.pt
+[2019-11-08 05:40:52,096 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:40:52,857 INFO] number of examples: 81551
+[2019-11-08 05:42:56,448 INFO] Step 15294/191175; acc:  93.99; ppl:  1.21; xent: 0.19; lr: 0.00100; 4584/4530 tok/s;    787 sec
+[2019-11-08 05:42:56,449 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:42:56,499 INFO] number of examples: 11651
+[2019-11-08 05:43:03,546 INFO] Validation perplexity: 1.29712
+[2019-11-08 05:43:03,547 INFO] Validation accuracy: 92.6683
+[2019-11-08 05:43:03,547 INFO] Model is improving acc: 92.5884 --> 92.6683.
+[2019-11-08 05:43:03,549 INFO] Saving checkpoint models/model2/model2_step_15294.pt
+[2019-11-08 05:43:03,866 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:43:04,787 INFO] number of examples: 81551
+[2019-11-08 05:45:08,339 INFO] Step 17843/191175; acc:  94.49; ppl:  1.19; xent: 0.17; lr: 0.00100; 4579/4525 tok/s;    919 sec
+[2019-11-08 05:45:08,339 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:45:08,382 INFO] number of examples: 11651
+[2019-11-08 05:45:15,437 INFO] Validation perplexity: 1.30083
+[2019-11-08 05:45:15,438 INFO] Validation accuracy: 92.6589
+[2019-11-08 05:45:15,438 INFO] Decreasing patience: 9/10
+[2019-11-08 05:45:15,439 INFO] Saving checkpoint models/model2/model2_step_17843.pt
+[2019-11-08 05:45:15,690 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:45:16,635 INFO] number of examples: 81551
+[2019-11-08 05:47:20,417 INFO] Step 20392/191175; acc:  94.98; ppl:  1.17; xent: 0.15; lr: 0.00100; 4572/4519 tok/s;   1051 sec
+[2019-11-08 05:47:20,418 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:47:20,896 INFO] number of examples: 11651
+[2019-11-08 05:47:28,000 INFO] Validation perplexity: 1.31363
+[2019-11-08 05:47:28,000 INFO] Validation accuracy: 92.8576
+[2019-11-08 05:47:28,000 INFO] Model is improving acc: 92.6683 --> 92.8576.
+[2019-11-08 05:47:28,002 INFO] Saving checkpoint models/model2/model2_step_20392.pt
+[2019-11-08 05:47:28,286 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:47:29,618 INFO] number of examples: 81551
+[2019-11-08 05:49:33,723 INFO] Step 22941/191175; acc:  95.45; ppl:  1.15; xent: 0.14; lr: 0.00100; 4530/4477 tok/s;   1184 sec
+[2019-11-08 05:49:33,724 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:49:34,105 INFO] number of examples: 11651
+[2019-11-08 05:49:41,184 INFO] Validation perplexity: 1.32596
+[2019-11-08 05:49:41,184 INFO] Validation accuracy: 92.8259
+[2019-11-08 05:49:41,185 INFO] Decreasing patience: 9/10
+[2019-11-08 05:49:41,186 INFO] Saving checkpoint models/model2/model2_step_22941.pt
+[2019-11-08 05:49:41,512 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:49:43,299 INFO] number of examples: 81551
+[2019-11-08 05:51:47,454 INFO] Step 25490/191175; acc:  95.75; ppl:  1.14; xent: 0.13; lr: 0.00100; 4516/4463 tok/s;   1318 sec
+[2019-11-08 05:51:47,454 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:51:47,497 INFO] number of examples: 11651
+[2019-11-08 05:51:54,554 INFO] Validation perplexity: 1.33994
+[2019-11-08 05:51:54,555 INFO] Validation accuracy: 92.7765
+[2019-11-08 05:51:54,555 INFO] Decreasing patience: 8/10
+[2019-11-08 05:51:54,556 INFO] Saving checkpoint models/model2/model2_step_25490.pt
+[2019-11-08 05:51:54,895 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:51:55,649 INFO] number of examples: 81551
+[2019-11-08 05:53:59,625 INFO] Step 28039/191175; acc:  96.01; ppl:  1.13; xent: 0.12; lr: 0.00100; 4569/4516 tok/s;   1450 sec
+[2019-11-08 05:53:59,626 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:53:59,672 INFO] number of examples: 11651
+[2019-11-08 05:54:06,756 INFO] Validation perplexity: 1.35396
+[2019-11-08 05:54:06,757 INFO] Validation accuracy: 92.713
+[2019-11-08 05:54:06,757 INFO] Decreasing patience: 7/10
+[2019-11-08 05:54:06,758 INFO] Saving checkpoint models/model2/model2_step_28039.pt
+[2019-11-08 05:54:07,075 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:54:07,984 INFO] number of examples: 81551
+[2019-11-08 05:56:12,015 INFO] Step 30588/191175; acc:  96.32; ppl:  1.12; xent: 0.11; lr: 0.00100; 4562/4508 tok/s;   1583 sec
+[2019-11-08 05:56:12,016 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:56:12,444 INFO] number of examples: 11651
+[2019-11-08 05:56:19,526 INFO] Validation perplexity: 1.36064
+[2019-11-08 05:56:19,526 INFO] Validation accuracy: 92.9411
+[2019-11-08 05:56:19,527 INFO] Model is improving acc: 92.8576 --> 92.9411.
+[2019-11-08 05:56:19,528 INFO] Saving checkpoint models/model2/model2_step_30588.pt
+[2019-11-08 05:56:19,817 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:56:21,169 INFO] number of examples: 81551
+[2019-11-08 05:58:25,095 INFO] Step 33137/191175; acc:  96.47; ppl:  1.11; xent: 0.11; lr: 0.00100; 4538/4485 tok/s;   1716 sec
+[2019-11-08 05:58:25,095 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 05:58:25,491 INFO] number of examples: 11651
+[2019-11-08 05:58:32,561 INFO] Validation perplexity: 1.37201
+[2019-11-08 05:58:32,561 INFO] Validation accuracy: 92.8988
+[2019-11-08 05:58:32,562 INFO] Decreasing patience: 9/10
+[2019-11-08 05:58:32,563 INFO] Saving checkpoint models/model2/model2_step_33137.pt
+[2019-11-08 05:58:32,890 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 05:58:34,649 INFO] number of examples: 81551
+[2019-11-08 06:00:38,693 INFO] Step 35686/191175; acc:  96.65; ppl:  1.11; xent: 0.10; lr: 0.00100; 4520/4467 tok/s;   1849 sec
+[2019-11-08 06:00:38,694 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:00:38,741 INFO] number of examples: 11651
+[2019-11-08 06:00:45,812 INFO] Validation perplexity: 1.38251
+[2019-11-08 06:00:45,812 INFO] Validation accuracy: 92.9364
+[2019-11-08 06:00:45,812 INFO] Decreasing patience: 8/10
+[2019-11-08 06:00:45,814 INFO] Saving checkpoint models/model2/model2_step_35686.pt
+[2019-11-08 06:00:46,134 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:00:46,923 INFO] number of examples: 81551
+[2019-11-08 06:02:51,130 INFO] Step 38235/191175; acc:  96.72; ppl:  1.11; xent: 0.10; lr: 0.00100; 4560/4507 tok/s;   1982 sec
+[2019-11-08 06:02:51,131 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:02:51,173 INFO] number of examples: 11651
+[2019-11-08 06:02:58,261 INFO] Validation perplexity: 1.3869
+[2019-11-08 06:02:58,262 INFO] Validation accuracy: 92.8694
+[2019-11-08 06:02:58,262 INFO] Decreasing patience: 7/10
+[2019-11-08 06:02:58,263 INFO] Saving checkpoint models/model2/model2_step_38235.pt
+[2019-11-08 06:02:58,592 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:02:59,559 INFO] number of examples: 81551
+[2019-11-08 06:05:03,739 INFO] Step 40784/191175; acc:  96.89; ppl:  1.10; xent: 0.10; lr: 0.00100; 4554/4501 tok/s;   2114 sec
+[2019-11-08 06:05:03,740 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:05:03,785 INFO] number of examples: 11651
+[2019-11-08 06:05:10,862 INFO] Validation perplexity: 1.40081
+[2019-11-08 06:05:10,863 INFO] Validation accuracy: 92.8906
+[2019-11-08 06:05:10,863 INFO] Decreasing patience: 6/10
+[2019-11-08 06:05:10,864 INFO] Saving checkpoint models/model2/model2_step_40784.pt
+[2019-11-08 06:05:11,214 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:05:12,165 INFO] number of examples: 81551
+[2019-11-08 06:07:16,108 INFO] Step 43333/191175; acc:  96.93; ppl:  1.10; xent: 0.10; lr: 0.00100; 4562/4509 tok/s;   2247 sec
+[2019-11-08 06:07:16,108 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:07:16,498 INFO] number of examples: 11651
+[2019-11-08 06:07:23,622 INFO] Validation perplexity: 1.39856
+[2019-11-08 06:07:23,622 INFO] Validation accuracy: 92.9364
+[2019-11-08 06:07:23,622 INFO] Decreasing patience: 5/10
+[2019-11-08 06:07:23,624 INFO] Saving checkpoint models/model2/model2_step_43333.pt
+[2019-11-08 06:07:23,914 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:07:25,165 INFO] number of examples: 81551
+[2019-11-08 06:09:29,202 INFO] Step 45882/191175; acc:  97.06; ppl:  1.09; xent: 0.09; lr: 0.00100; 4537/4484 tok/s;   2380 sec
+[2019-11-08 06:09:29,203 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:09:29,616 INFO] number of examples: 11651
+[2019-11-08 06:09:36,683 INFO] Validation perplexity: 1.40124
+[2019-11-08 06:09:36,683 INFO] Validation accuracy: 93.0258
+[2019-11-08 06:09:36,684 INFO] Model is improving acc: 92.9411 --> 93.0258.
+[2019-11-08 06:09:36,685 INFO] Saving checkpoint models/model2/model2_step_45882.pt
+[2019-11-08 06:09:36,994 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:09:38,894 INFO] number of examples: 81551
+[2019-11-08 06:11:42,993 INFO] Step 48431/191175; acc:  97.19; ppl:  1.09; xent: 0.09; lr: 0.00100; 4514/4461 tok/s;   2514 sec
+[2019-11-08 06:11:42,993 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:11:43,050 INFO] number of examples: 11651
+[2019-11-08 06:11:50,135 INFO] Validation perplexity: 1.42699
+[2019-11-08 06:11:50,135 INFO] Validation accuracy: 92.9494
+[2019-11-08 06:11:50,136 INFO] Decreasing patience: 9/10
+[2019-11-08 06:11:50,137 INFO] Saving checkpoint models/model2/model2_step_48431.pt
+[2019-11-08 06:11:50,448 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:11:51,197 INFO] number of examples: 81551
+[2019-11-08 06:13:55,181 INFO] Step 50980/191175; acc:  97.37; ppl:  1.09; xent: 0.08; lr: 0.00050; 4569/4515 tok/s;   2646 sec
+[2019-11-08 06:13:55,182 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:13:55,640 INFO] number of examples: 11651
+[2019-11-08 06:14:02,739 INFO] Validation perplexity: 1.40251
+[2019-11-08 06:14:02,740 INFO] Validation accuracy: 93.3033
+[2019-11-08 06:14:02,740 INFO] Model is improving acc: 93.0258 --> 93.3033.
+[2019-11-08 06:14:02,741 INFO] Saving checkpoint models/model2/model2_step_50980.pt
+[2019-11-08 06:14:03,030 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:14:04,372 INFO] number of examples: 81551
+[2019-11-08 06:16:08,718 INFO] Step 53529/191175; acc:  98.34; ppl:  1.05; xent: 0.05; lr: 0.00050; 4522/4469 tok/s;   2779 sec
+[2019-11-08 06:16:08,719 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:16:09,122 INFO] number of examples: 11651
+[2019-11-08 06:16:16,221 INFO] Validation perplexity: 1.42022
+[2019-11-08 06:16:16,221 INFO] Validation accuracy: 93.3527
+[2019-11-08 06:16:16,221 INFO] Model is improving acc: 93.3033 --> 93.3527.
+[2019-11-08 06:16:16,222 INFO] Saving checkpoint models/model2/model2_step_53529.pt
+[2019-11-08 06:16:16,523 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:16:18,318 INFO] number of examples: 81551
+[2019-11-08 06:18:22,401 INFO] Step 56078/191175; acc:  98.65; ppl:  1.04; xent: 0.04; lr: 0.00050; 4517/4465 tok/s;   2913 sec
+[2019-11-08 06:18:22,401 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:18:22,445 INFO] number of examples: 11651
+[2019-11-08 06:18:29,608 INFO] Validation perplexity: 1.44193
+[2019-11-08 06:18:29,609 INFO] Validation accuracy: 93.4115
+[2019-11-08 06:18:29,609 INFO] Model is improving acc: 93.3527 --> 93.4115.
+[2019-11-08 06:18:29,610 INFO] Saving checkpoint models/model2/model2_step_56078.pt
+[2019-11-08 06:18:29,929 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:18:30,695 INFO] number of examples: 81551
+[2019-11-08 06:20:34,418 INFO] Step 58627/191175; acc:  98.81; ppl:  1.04; xent: 0.04; lr: 0.00050; 4574/4521 tok/s;   3045 sec
+[2019-11-08 06:20:34,418 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:20:34,823 INFO] number of examples: 11651
+[2019-11-08 06:20:41,945 INFO] Validation perplexity: 1.46771
+[2019-11-08 06:20:41,946 INFO] Validation accuracy: 93.3703
+[2019-11-08 06:20:41,946 INFO] Decreasing patience: 9/10
+[2019-11-08 06:20:41,947 INFO] Saving checkpoint models/model2/model2_step_58627.pt
+[2019-11-08 06:20:42,249 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:20:44,051 INFO] number of examples: 81551
+[2019-11-08 06:22:48,320 INFO] Step 61176/191175; acc:  98.93; ppl:  1.03; xent: 0.03; lr: 0.00025; 4510/4457 tok/s;   3179 sec
+[2019-11-08 06:22:48,321 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:22:48,368 INFO] number of examples: 11651
+[2019-11-08 06:22:55,467 INFO] Validation perplexity: 1.46799
+[2019-11-08 06:22:55,468 INFO] Validation accuracy: 93.5044
+[2019-11-08 06:22:55,468 INFO] Model is improving acc: 93.4115 --> 93.5044.
+[2019-11-08 06:22:55,469 INFO] Saving checkpoint models/model2/model2_step_61176.pt
+[2019-11-08 06:22:55,747 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:22:56,536 INFO] number of examples: 81551
+[2019-11-08 06:25:00,718 INFO] Step 63725/191175; acc:  99.28; ppl:  1.02; xent: 0.02; lr: 0.00025; 4561/4508 tok/s;   3311 sec
+[2019-11-08 06:25:00,719 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:25:00,775 INFO] number of examples: 11651
+[2019-11-08 06:25:07,859 INFO] Validation perplexity: 1.47766
+[2019-11-08 06:25:07,860 INFO] Validation accuracy: 93.5714
+[2019-11-08 06:25:07,860 INFO] Model is improving acc: 93.5044 --> 93.5714.
+[2019-11-08 06:25:07,861 INFO] Saving checkpoint models/model2/model2_step_63725.pt
+[2019-11-08 06:25:08,161 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:25:09,101 INFO] number of examples: 81551
+[2019-11-08 06:27:13,087 INFO] Step 66274/191175; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00025; 4562/4509 tok/s;   3444 sec
+[2019-11-08 06:27:13,088 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:27:13,134 INFO] number of examples: 11651
+[2019-11-08 06:27:20,224 INFO] Validation perplexity: 1.493
+[2019-11-08 06:27:20,224 INFO] Validation accuracy: 93.5832
+[2019-11-08 06:27:20,225 INFO] Model is improving acc: 93.5714 --> 93.5832.
+[2019-11-08 06:27:20,226 INFO] Saving checkpoint models/model2/model2_step_66274.pt
+[2019-11-08 06:27:20,478 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:27:21,445 INFO] number of examples: 81551
+[2019-11-08 06:29:25,357 INFO] Step 68823/191175; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00025; 4566/4512 tok/s;   3576 sec
+[2019-11-08 06:29:25,358 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:29:25,400 INFO] number of examples: 11651
+[2019-11-08 06:29:32,503 INFO] Validation perplexity: 1.50447
+[2019-11-08 06:29:32,504 INFO] Validation accuracy: 93.6502
+[2019-11-08 06:29:32,504 INFO] Model is improving acc: 93.5832 --> 93.6502.
+[2019-11-08 06:29:32,505 INFO] Saving checkpoint models/model2/model2_step_68823.pt
+[2019-11-08 06:29:32,812 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:29:33,756 INFO] number of examples: 81551
+[2019-11-08 06:31:37,766 INFO] Step 71372/191175; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00013; 4561/4508 tok/s;   3708 sec
+[2019-11-08 06:31:37,767 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:31:38,196 INFO] number of examples: 11651
+[2019-11-08 06:31:45,241 INFO] Validation perplexity: 1.50826
+[2019-11-08 06:31:45,241 INFO] Validation accuracy: 93.6608
+[2019-11-08 06:31:45,241 INFO] Model is improving acc: 93.6502 --> 93.6608.
+[2019-11-08 06:31:45,243 INFO] Saving checkpoint models/model2/model2_step_71372.pt
+[2019-11-08 06:31:45,578 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:31:46,871 INFO] number of examples: 81551
+[2019-11-08 06:33:50,965 INFO] Step 73921/191175; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00013; 4534/4481 tok/s;   3842 sec
+[2019-11-08 06:33:50,965 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:33:51,372 INFO] number of examples: 11651
+[2019-11-08 06:33:58,504 INFO] Validation perplexity: 1.51735
+[2019-11-08 06:33:58,504 INFO] Validation accuracy: 93.7019
+[2019-11-08 06:33:58,504 INFO] Model is improving acc: 93.6608 --> 93.7019.
+[2019-11-08 06:33:58,505 INFO] Saving checkpoint models/model2/model2_step_73921.pt
+[2019-11-08 06:33:58,812 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:34:00,562 INFO] number of examples: 81551
+[2019-11-08 06:36:04,625 INFO] Step 76470/191175; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00013; 4518/4465 tok/s;   3975 sec
+[2019-11-08 06:36:04,626 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:36:04,673 INFO] number of examples: 11651
+[2019-11-08 06:36:11,794 INFO] Validation perplexity: 1.52456
+[2019-11-08 06:36:11,795 INFO] Validation accuracy: 93.7619
+[2019-11-08 06:36:11,795 INFO] Model is improving acc: 93.7019 --> 93.7619.
+[2019-11-08 06:36:11,797 INFO] Saving checkpoint models/model2/model2_step_76470.pt
+[2019-11-08 06:36:12,067 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:36:12,845 INFO] number of examples: 81551
+[2019-11-08 06:38:16,614 INFO] Step 79019/191175; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00013; 4575/4522 tok/s;   4107 sec
+[2019-11-08 06:38:16,615 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:38:17,055 INFO] number of examples: 11651
+[2019-11-08 06:38:24,176 INFO] Validation perplexity: 1.5317
+[2019-11-08 06:38:24,176 INFO] Validation accuracy: 93.7748
+[2019-11-08 06:38:24,177 INFO] Model is improving acc: 93.7619 --> 93.7748.
+[2019-11-08 06:38:24,178 INFO] Saving checkpoint models/model2/model2_step_79019.pt
+[2019-11-08 06:38:24,462 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:38:25,723 INFO] number of examples: 81551
+[2019-11-08 06:40:29,507 INFO] Step 81568/191175; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00006; 4544/4491 tok/s;   4240 sec
+[2019-11-08 06:40:29,508 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:40:29,963 INFO] number of examples: 11651
+[2019-11-08 06:40:37,068 INFO] Validation perplexity: 1.53415
+[2019-11-08 06:40:37,068 INFO] Validation accuracy: 93.8007
+[2019-11-08 06:40:37,068 INFO] Model is improving acc: 93.7748 --> 93.8007.
+[2019-11-08 06:40:37,070 INFO] Saving checkpoint models/model2/model2_step_81568.pt
+[2019-11-08 06:40:37,343 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:40:38,708 INFO] number of examples: 81551
+[2019-11-08 06:42:42,606 INFO] Step 84117/191175; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00006; 4537/4484 tok/s;   4373 sec
+[2019-11-08 06:42:42,607 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:42:43,046 INFO] number of examples: 11651
+[2019-11-08 06:42:50,128 INFO] Validation perplexity: 1.53756
+[2019-11-08 06:42:50,128 INFO] Validation accuracy: 93.8101
+[2019-11-08 06:42:50,128 INFO] Model is improving acc: 93.8007 --> 93.8101.
+[2019-11-08 06:42:50,131 INFO] Saving checkpoint models/model2/model2_step_84117.pt
+[2019-11-08 06:42:50,420 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:42:52,165 INFO] number of examples: 81551
+[2019-11-08 06:44:56,416 INFO] Step 86666/191175; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00006; 4513/4460 tok/s;   4507 sec
+[2019-11-08 06:44:56,417 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:44:56,460 INFO] number of examples: 11651
+[2019-11-08 06:45:03,556 INFO] Validation perplexity: 1.54266
+[2019-11-08 06:45:03,556 INFO] Validation accuracy: 93.8019
+[2019-11-08 06:45:03,557 INFO] Decreasing patience: 9/10
+[2019-11-08 06:45:03,558 INFO] Saving checkpoint models/model2/model2_step_86666.pt
+[2019-11-08 06:45:03,902 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:45:04,693 INFO] number of examples: 81551
+[2019-11-08 06:47:07,999 INFO] Step 89215/191175; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00006; 4590/4536 tok/s;   4639 sec
+[2019-11-08 06:47:08,000 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:47:08,420 INFO] number of examples: 11651
+[2019-11-08 06:47:15,508 INFO] Validation perplexity: 1.54843
+[2019-11-08 06:47:15,509 INFO] Validation accuracy: 93.7878
+[2019-11-08 06:47:15,509 INFO] Decreasing patience: 8/10
+[2019-11-08 06:47:15,511 INFO] Saving checkpoint models/model2/model2_step_89215.pt
+[2019-11-08 06:47:15,782 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:47:17,573 INFO] number of examples: 81551
+[2019-11-08 06:49:21,157 INFO] Step 91764/191175; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00003; 4535/4482 tok/s;   4772 sec
+[2019-11-08 06:49:21,158 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:49:21,208 INFO] number of examples: 11651
+[2019-11-08 06:49:28,316 INFO] Validation perplexity: 1.55131
+[2019-11-08 06:49:28,317 INFO] Validation accuracy: 93.836
+[2019-11-08 06:49:28,317 INFO] Model is improving acc: 93.8101 --> 93.836.
+[2019-11-08 06:49:28,318 INFO] Saving checkpoint models/model2/model2_step_91764.pt
+[2019-11-08 06:49:28,660 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:49:29,470 INFO] number of examples: 81551
+[2019-11-08 06:51:32,841 INFO] Step 94313/191175; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00003; 4586/4532 tok/s;   4903 sec
+[2019-11-08 06:51:32,842 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:51:32,888 INFO] number of examples: 11651
+[2019-11-08 06:51:40,057 INFO] Validation perplexity: 1.55328
+[2019-11-08 06:51:40,057 INFO] Validation accuracy: 93.8325
+[2019-11-08 06:51:40,058 INFO] Decreasing patience: 9/10
+[2019-11-08 06:51:40,059 INFO] Saving checkpoint models/model2/model2_step_94313.pt
+[2019-11-08 06:51:40,331 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:51:41,302 INFO] number of examples: 81551
+[2019-11-08 06:53:45,041 INFO] Step 96862/191175; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00003; 4568/4515 tok/s;   5036 sec
+[2019-11-08 06:53:45,042 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:53:45,090 INFO] number of examples: 11651
+[2019-11-08 06:53:52,255 INFO] Validation perplexity: 1.55588
+[2019-11-08 06:53:52,255 INFO] Validation accuracy: 93.8301
+[2019-11-08 06:53:52,255 INFO] Decreasing patience: 8/10
+[2019-11-08 06:53:52,257 INFO] Saving checkpoint models/model2/model2_step_96862.pt
+[2019-11-08 06:53:52,578 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:53:53,544 INFO] number of examples: 81551
+[2019-11-08 06:55:57,016 INFO] Step 99411/191175; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00003; 4576/4522 tok/s;   5168 sec
+[2019-11-08 06:55:57,017 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:55:57,059 INFO] number of examples: 11651
+[2019-11-08 06:56:04,184 INFO] Validation perplexity: 1.55918
+[2019-11-08 06:56:04,185 INFO] Validation accuracy: 93.8313
+[2019-11-08 06:56:04,185 INFO] Decreasing patience: 7/10
+[2019-11-08 06:56:04,187 INFO] Saving checkpoint models/model2/model2_step_99411.pt
+[2019-11-08 06:56:04,485 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:56:05,408 INFO] number of examples: 81551
+[2019-11-08 06:58:08,801 INFO] Step 101960/191175; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00002; 4582/4529 tok/s;   5299 sec
+[2019-11-08 06:58:08,801 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 06:58:09,242 INFO] number of examples: 11651
+[2019-11-08 06:58:16,388 INFO] Validation perplexity: 1.55956
+[2019-11-08 06:58:16,388 INFO] Validation accuracy: 93.8301
+[2019-11-08 06:58:16,388 INFO] Decreasing patience: 6/10
+[2019-11-08 06:58:16,389 INFO] Saving checkpoint models/model2/model2_step_101960.pt
+[2019-11-08 06:58:16,658 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 06:58:17,994 INFO] number of examples: 81551
+[2019-11-08 07:00:21,312 INFO] Step 104509/191175; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00002; 4557/4504 tok/s;   5432 sec
+[2019-11-08 07:00:21,313 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:00:21,735 INFO] number of examples: 11651
+[2019-11-08 07:00:28,865 INFO] Validation perplexity: 1.56061
+[2019-11-08 07:00:28,866 INFO] Validation accuracy: 93.8289
+[2019-11-08 07:00:28,866 INFO] Decreasing patience: 5/10
+[2019-11-08 07:00:28,867 INFO] Saving checkpoint models/model2/model2_step_104509.pt
+[2019-11-08 07:00:29,163 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:00:31,037 INFO] number of examples: 81551
+[2019-11-08 07:02:34,489 INFO] Step 107058/191175; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00002; 4535/4482 tok/s;   5565 sec
+[2019-11-08 07:02:34,490 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:02:34,536 INFO] number of examples: 11651
+[2019-11-08 07:02:41,674 INFO] Validation perplexity: 1.56141
+[2019-11-08 07:02:41,674 INFO] Validation accuracy: 93.8454
+[2019-11-08 07:02:41,675 INFO] Model is improving acc: 93.836 --> 93.8454.
+[2019-11-08 07:02:41,676 INFO] Saving checkpoint models/model2/model2_step_107058.pt
+[2019-11-08 07:02:41,964 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:02:42,770 INFO] number of examples: 81551
+[2019-11-08 07:04:45,872 INFO] Step 109607/191175; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00002; 4597/4543 tok/s;   5697 sec
+[2019-11-08 07:04:45,873 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:04:46,303 INFO] number of examples: 11651
+[2019-11-08 07:04:53,453 INFO] Validation perplexity: 1.56315
+[2019-11-08 07:04:53,453 INFO] Validation accuracy: 93.8419
+[2019-11-08 07:04:53,453 INFO] Decreasing patience: 9/10
+[2019-11-08 07:04:53,454 INFO] Saving checkpoint models/model2/model2_step_109607.pt
+[2019-11-08 07:04:53,739 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:04:55,055 INFO] number of examples: 81551
+[2019-11-08 07:06:58,338 INFO] Step 112156/191175; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00001; 4559/4506 tok/s;   5829 sec
+[2019-11-08 07:06:58,339 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:06:58,794 INFO] number of examples: 11651
+[2019-11-08 07:07:05,968 INFO] Validation perplexity: 1.56387
+[2019-11-08 07:07:05,971 INFO] Validation accuracy: 93.8395
+[2019-11-08 07:07:05,971 INFO] Decreasing patience: 8/10
+[2019-11-08 07:07:05,973 INFO] Saving checkpoint models/model2/model2_step_112156.pt
+[2019-11-08 07:07:06,251 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:07:07,615 INFO] number of examples: 81551
+[2019-11-08 07:09:10,895 INFO] Step 114705/191175; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00001; 4556/4502 tok/s;   5962 sec
+[2019-11-08 07:09:10,895 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:09:11,321 INFO] number of examples: 11651
+[2019-11-08 07:09:18,490 INFO] Validation perplexity: 1.56402
+[2019-11-08 07:09:18,491 INFO] Validation accuracy: 93.8583
+[2019-11-08 07:09:18,491 INFO] Model is improving acc: 93.8454 --> 93.8583.
+[2019-11-08 07:09:18,492 INFO] Saving checkpoint models/model2/model2_step_114705.pt
+[2019-11-08 07:09:18,740 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:09:20,599 INFO] number of examples: 81551
+[2019-11-08 07:11:24,281 INFO] Step 117254/191175; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00001; 4527/4475 tok/s;   6095 sec
+[2019-11-08 07:11:24,281 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:11:24,326 INFO] number of examples: 11651
+[2019-11-08 07:11:31,461 INFO] Validation perplexity: 1.56519
+[2019-11-08 07:11:31,462 INFO] Validation accuracy: 93.8666
+[2019-11-08 07:11:31,462 INFO] Model is improving acc: 93.8583 --> 93.8666.
+[2019-11-08 07:11:31,463 INFO] Saving checkpoint models/model2/model2_step_117254.pt
+[2019-11-08 07:11:31,781 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:11:32,597 INFO] number of examples: 81551
+[2019-11-08 07:13:36,023 INFO] Step 119803/191175; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00001; 4584/4530 tok/s;   6227 sec
+[2019-11-08 07:13:36,023 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:13:36,445 INFO] number of examples: 11651
+[2019-11-08 07:13:43,569 INFO] Validation perplexity: 1.56594
+[2019-11-08 07:13:43,569 INFO] Validation accuracy: 93.8713
+[2019-11-08 07:13:43,569 INFO] Model is improving acc: 93.8666 --> 93.8713.
+[2019-11-08 07:13:43,571 INFO] Saving checkpoint models/model2/model2_step_119803.pt
+[2019-11-08 07:13:43,881 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:13:45,749 INFO] number of examples: 81551
+[2019-11-08 07:15:49,629 INFO] Step 122352/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4520/4467 tok/s;   6360 sec
+[2019-11-08 07:15:49,630 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:15:49,687 INFO] number of examples: 11651
+[2019-11-08 07:15:56,848 INFO] Validation perplexity: 1.56589
+[2019-11-08 07:15:56,848 INFO] Validation accuracy: 93.8677
+[2019-11-08 07:15:56,848 INFO] Decreasing patience: 9/10
+[2019-11-08 07:15:56,850 INFO] Saving checkpoint models/model2/model2_step_122352.pt
+[2019-11-08 07:15:57,152 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:15:57,966 INFO] number of examples: 81551
+[2019-11-08 07:18:01,451 INFO] Step 124901/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4581/4528 tok/s;   6492 sec
+[2019-11-08 07:18:01,452 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:18:01,497 INFO] number of examples: 11651
+[2019-11-08 07:18:08,650 INFO] Validation perplexity: 1.56598
+[2019-11-08 07:18:08,650 INFO] Validation accuracy: 93.8689
+[2019-11-08 07:18:08,651 INFO] Decreasing patience: 8/10
+[2019-11-08 07:18:08,652 INFO] Saving checkpoint models/model2/model2_step_124901.pt
+[2019-11-08 07:18:08,934 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:18:09,936 INFO] number of examples: 81551
+[2019-11-08 07:20:13,951 INFO] Step 127450/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4558/4504 tok/s;   6625 sec
+[2019-11-08 07:20:13,951 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:20:14,000 INFO] number of examples: 11651
+[2019-11-08 07:20:21,177 INFO] Validation perplexity: 1.56641
+[2019-11-08 07:20:21,177 INFO] Validation accuracy: 93.863
+[2019-11-08 07:20:21,177 INFO] Decreasing patience: 7/10
+[2019-11-08 07:20:21,178 INFO] Saving checkpoint models/model2/model2_step_127450.pt
+[2019-11-08 07:20:21,462 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:20:22,441 INFO] number of examples: 81551
+[2019-11-08 07:22:26,122 INFO] Step 129999/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4569/4516 tok/s;   6757 sec
+[2019-11-08 07:22:26,123 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:22:26,167 INFO] number of examples: 11651
+[2019-11-08 07:22:33,299 INFO] Validation perplexity: 1.567
+[2019-11-08 07:22:33,299 INFO] Validation accuracy: 93.8654
+[2019-11-08 07:22:33,299 INFO] Decreasing patience: 6/10
+[2019-11-08 07:22:33,301 INFO] Saving checkpoint models/model2/model2_step_129999.pt
+[2019-11-08 07:22:33,550 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:22:34,495 INFO] number of examples: 81551
+[2019-11-08 07:24:37,965 INFO] Step 132548/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4580/4527 tok/s;   6889 sec
+[2019-11-08 07:24:37,965 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:24:38,413 INFO] number of examples: 11651
+[2019-11-08 07:24:45,562 INFO] Validation perplexity: 1.56713
+[2019-11-08 07:24:45,563 INFO] Validation accuracy: 93.8619
+[2019-11-08 07:24:45,563 INFO] Decreasing patience: 5/10
+[2019-11-08 07:24:45,565 INFO] Saving checkpoint models/model2/model2_step_132548.pt
+[2019-11-08 07:24:45,833 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:24:47,214 INFO] number of examples: 81551
+[2019-11-08 07:26:50,526 INFO] Step 135097/191175; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00000; 4556/4502 tok/s;   7021 sec
+[2019-11-08 07:26:50,527 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:26:50,945 INFO] number of examples: 11651
+[2019-11-08 07:26:58,091 INFO] Validation perplexity: 1.56735
+[2019-11-08 07:26:58,092 INFO] Validation accuracy: 93.8595
+[2019-11-08 07:26:58,092 INFO] Decreasing patience: 4/10
+[2019-11-08 07:26:58,093 INFO] Saving checkpoint models/model2/model2_step_135097.pt
+[2019-11-08 07:26:58,386 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:27:00,220 INFO] number of examples: 81551
+[2019-11-08 07:29:03,734 INFO] Step 137646/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4534/4480 tok/s;   7154 sec
+[2019-11-08 07:29:03,735 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:29:03,783 INFO] number of examples: 11651
+[2019-11-08 07:29:10,943 INFO] Validation perplexity: 1.56765
+[2019-11-08 07:29:10,943 INFO] Validation accuracy: 93.8607
+[2019-11-08 07:29:10,943 INFO] Decreasing patience: 3/10
+[2019-11-08 07:29:10,945 INFO] Saving checkpoint models/model2/model2_step_137646.pt
+[2019-11-08 07:29:11,277 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:29:12,065 INFO] number of examples: 81551
+[2019-11-08 07:31:16,004 INFO] Step 140195/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4566/4512 tok/s;   7287 sec
+[2019-11-08 07:31:16,005 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:31:16,430 INFO] number of examples: 11651
+[2019-11-08 07:31:23,598 INFO] Validation perplexity: 1.56792
+[2019-11-08 07:31:23,598 INFO] Validation accuracy: 93.8595
+[2019-11-08 07:31:23,598 INFO] Decreasing patience: 2/10
+[2019-11-08 07:31:23,600 INFO] Saving checkpoint models/model2/model2_step_140195.pt
+[2019-11-08 07:31:23,906 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:31:25,181 INFO] number of examples: 81551
+[2019-11-08 07:33:29,138 INFO] Step 142744/191175; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00000; 4536/4483 tok/s;   7420 sec
+[2019-11-08 07:33:29,138 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:33:29,570 INFO] number of examples: 11651
+[2019-11-08 07:33:36,729 INFO] Validation perplexity: 1.56802
+[2019-11-08 07:33:36,730 INFO] Validation accuracy: 93.8536
+[2019-11-08 07:33:36,730 INFO] Decreasing patience: 1/10
+[2019-11-08 07:33:36,731 INFO] Saving checkpoint models/model2/model2_step_142744.pt
+[2019-11-08 07:33:37,013 INFO] Loading dataset from data/processed_data.train.0.pt
+[2019-11-08 07:33:38,336 INFO] number of examples: 81551
+[2019-11-08 07:35:42,565 INFO] Step 145293/191175; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00000; 4526/4473 tok/s;   7553 sec
+[2019-11-08 07:35:42,566 INFO] Loading dataset from data/processed_data.valid.0.pt
+[2019-11-08 07:35:43,006 INFO] number of examples: 11651
+[2019-11-08 07:35:50,166 INFO] Validation perplexity: 1.56807
+[2019-11-08 07:35:50,166 INFO] Validation accuracy: 93.8548
+[2019-11-08 07:35:50,167 INFO] Decreasing patience: 0/10
+[2019-11-08 07:35:50,167 INFO] Training finished after not improving. Early Stop!
+[2019-11-08 07:35:50,167 INFO] Best model found at step 119803
+[2019-11-08 07:35:50,173 INFO] Saving checkpoint models/model2/model2_step_145293.pt
