@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Grapheme to Phoneme</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <!-- Custom stylesheet -->
+  <!-- <link rel="stylesheet" href="assets/css/custom.css"> -->
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navbar-->
+  <!-- <nav class="navbar navbar-light navbar-expand-lg sticky-top bg-white"><a href="/" class="navbar-brand"></a>
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <!-- Main Content -->
+  <div id="content">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+      <div class="jumbotron bg-white text-black">
+
+        <!-- Title -->
+        <h1 class="display-4">Grapheme to Phoneme Converter</h1>
+
+        <!-- Instructions -->
+        <p>
+          <strong>Instructions</strong>:
+          <ul>
+            <li>Enter words in the text box (no punctional symbols or special characters)</li>
+            <li>Each word is individually translated to a list of phoneme, which will be displayed in a row under the input box</li>
+            <li>The phonemes are encoded in ARPABET symbols, with numbers indicating stress for vowels</li>
+            <li>Hover on a phoneme symbol to hear approximatively what is should sound like</li>
+          </ul>
+        </p>
+
+        <!-- Text input field -->
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control rounded-right" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="userInput">
+          <div class="invalid-feedback">
+            Invalid input
+          </div>
+        </div>
+
+        <!-- Phoneme buttons -->
+        <div class='my-2' id='phonemeContainer'>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- End of Page Content -->
+
+    </div>
+    <!-- End of Main Content -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+  <!-- JavaScript files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/input_output.js"></script>
+  <script src="assets/js/audio.js"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+  </script>
+
+</html>
