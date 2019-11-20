@@ -1,0 +1,13 @@
+{
+  "models_root": "./available_models",
+  "models": [
+    {
+      "id": 0,
+      "model": "model2_step_119803.pt",
+      "load":true,
+      "opt": {
+        "beam_size": 5
+      }
+    }
+  ]
+}
