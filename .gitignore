@@ -14,3 +14,9 @@ training/models/*
 training/models/model2/*
 !training/models/model2/model2_step_119803.pt.zip
 !training/models/model2/model2-training-log.txt
+
+# ignore NodeJS modules
+node_modules/
+
+# ignore non-zipped model checkpoint file (for translation server)
+model2_step_119803.pt
