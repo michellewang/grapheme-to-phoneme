@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "MAIS 202 final project",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.28.0",
     "express": "^4.21.2",
     "socket.io": "^2.3.0"
   }
